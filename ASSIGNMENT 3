@@ -1,0 +1,85 @@
+ASSIGNMENT 3.1:
+
+word = input("Enter the word: ").upper()
+
+vowels = []
+consonants = []
+
+for letter in word:
+    if letter in 'AEIOU':
+        vowels.append(letter)
+    else:
+        consonants.append(letter)
+
+vowels.sort()
+consonants.sort()
+
+print(f"Vowels in alphabetical order: {', '.join(vowels)}")
+print(f"Consonants in alphabetical order: {', '.join(consonants)}")
+
+if len(vowels) > len(consonants):
+    print("Maximum Count: Vowels")
+elif len(vowels) < len(consonants):
+    print("Maximum Count: Consonants")
+else:
+    print("Equal")
+    
+ASSIGNMENT 3.2
+
+def length_of_last_word(s):
+    s = s.strip()
+    words = s.split(' ')
+    if words:
+        return len(words[-1])
+    else:
+        return 0
+s = "Hello World"
+print(length_of_last_word(s))  
+
+ASSIGNMENT 3.3
+
+number = input("Enter the number: ")
+reverse = number[::-1]
+print("Mirror image:", reverse)
+
+ASSIGNMENT 3.4
+
+def delchar(s, c):
+    if len(c) != 1:
+        return s
+    new_str = ''
+    for char in s:
+        if char != c:
+            new_str += char
+    return new_str
+s = 'Hello world'
+c = 'l'
+new_s = delchar(s, c)
+print("String after the character is removed:", new_s)
+
+ASSIGNMENT 3.5
+
+def merge_strings(s1, s2):
+    merged = ''
+    for i in range(max(len(s1), len(s2))):
+        if i < len(s1):
+            merged += s1[i]
+        if i < len(s2):
+            merged += s2[i]
+    return merged
+
+def count_vowels(s):
+    vowels = 'aeiouAEIOU'
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count
+S1 = 'welcome'
+S2 = 'Homely'
+merged = merge_strings(S1, S2)
+print("Merged string:", merged)
+
+S3 = merged[1:]
+vowel_count = count_vowels(S3)
+print("Vowel count:", vowel_count)
